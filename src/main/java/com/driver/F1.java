@@ -3,11 +3,13 @@ package com.driver;
 public class F1 extends Car {
 
     public F1(String name, boolean isManual) {
-       super(name, 0, 0, 0, isManual, name, 0);
+       super(name, 4, 0, 0, isManual, name, 1);
     }
 
     public void accelerate(int rate){
-        int newSpeed = 0; //set the value of new speed by using currentSpeed and rate
+        int newSpeed = this.getCurrentSpeed() + rate;
+        
+        ; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
          * speed 1-50: gear 1
@@ -19,12 +21,20 @@ public class F1 extends Car {
          */
 
         if(newSpeed == 0) {
+            stop();
+            changeGear(0);
+            return;
             //Stop the car, set gear as 1
         }
         //for all other cases, change the gear accordingly
-
+          changeGear(newSpeed <= 50 ? 1 :
+           newSpeed <=100 ? 1 : 
+           newSpeed <=150 ? 2 :
+           newSpeed <=200 ? 4 :
+           newSpeed <=250 ? 5 : 6);
+       
         if(newSpeed > 0) {
-            changeSpeed(newSpeed, this.currentDirection());
+            changeSpeed(newSpeed, this.getCurrentDirection());
         }
     }
 }
