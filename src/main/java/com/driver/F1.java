@@ -28,8 +28,8 @@ public class F1 extends Car {
         }
         //for all other cases, change the gear accordingly
           changeGear(newSpeed <= 50 ? 1 :
-           newSpeed <=100 ? 1 : 
-           newSpeed <=150 ? 2 :
+           newSpeed <=100 ? 2 : 
+           newSpeed <=150 ? 3 :
            newSpeed <=200 ? 4 :
            newSpeed <=250 ? 5 : 6);
        
