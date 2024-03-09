@@ -29,4 +29,32 @@ public class Car extends Vehicle {
         System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed
                 + ", and the direction is changed to: " + newDirection + " degrees");
     }
+
+    public int getWheels() {
+        return this.wheels;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public int getDoors() {
+        return this.doors;
+    }
+
+    public int getGears() {
+        return this.gears;
+    }
+
+    public boolean isManual() {
+        return this.isManual;
+    }
+
+    public int getCurrentGear() {
+        return this.currentGear;
+    }
+
+    public int getSeats() {
+        return this.seats;
+    }
 }
